@@ -1,0 +1,17 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6656865c_002D4438_002D436e_002D977b_002Da4564606af9d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CadastrarContato #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::C6FE9350-6459-46D5-A743-0871427D91D8::net8.0::TechChallengeContatosTest.ContatoTest.CadastrarContato&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9cdb8c31_002Deebc_002D44e0_002D95c2_002D33d3867a88f5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CadastrarContato" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::C6FE9350-6459-46D5-A743-0871427D91D8::net8.0::TechChallengeContatosTest.ContatoTest.CadastrarContato&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::C6FE9350-6459-46D5-A743-0871427D91D8::net8.0::TechChallengeContatosTest.ContatoTest.CadastrarContatoError&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b4916d78_002D176d_002D44b1_002Dae07_002Dd246c6008ccc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CadastrarContato #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::C6FE9350-6459-46D5-A743-0871427D91D8::net8.0::TechChallengeContatosTest.ContatoTest.CadastrarContato&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
