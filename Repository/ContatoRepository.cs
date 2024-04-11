@@ -10,21 +10,20 @@ namespace TechChallengeContatos.Repository
         public ContatoRepository(AppDbContext context)
         {
             _context = context;
+
         }
-        public Contato CadastrarContato(Contato contato)
+        public void CadastrarContato(Contato contato)
         {
             _context.Contatos.Add(contato);
             _context.SaveChanges();
-
-            return contato;
         }
 
-        public IList<Contato> ListarContato()
+        public List<Contato> ListarContato()
         {
             return _context.Contatos.ToList();
         }
 
-        public IList<Contato> ContatoPorRegiao(string DDD)
+        public List<Contato> ContatoPorRegiao(string DDD)
         {
             var contato = _context.Contatos.Where(x => x.DDD == DDD).ToList();
 
@@ -44,10 +43,11 @@ namespace TechChallengeContatos.Repository
             {
                 throw new Exception("Nenhum valor encontrado");
             }
-            contatoEncontrado.Telefone = contato.Telefone;
-            contatoEncontrado.DDD = contato.DDD;
-            contatoEncontrado.Nome = contato.Nome;
-            contatoEncontrado.Email = contato.Email;
+
+            contatoEncontrado.SetNome(contato.Nome);
+            contatoEncontrado.SetDDD(contato.DDD);
+            contatoEncontrado.SetTelefone(contato.Telefone);
+            contatoEncontrado.SetEmail(contato.Email);
 
             _context.Contatos.Update(contatoEncontrado);
             _context.SaveChanges();

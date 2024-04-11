@@ -134,3 +134,8 @@ C:\Users\jeffe\source\repos\TechChallengeContatos\obj\Debug\net8.0\refint\TechCh
 C:\Users\jeffe\source\repos\TechChallengeContatos\obj\Debug\net8.0\TechChallengeContatos.pdb
 C:\Users\jeffe\source\repos\TechChallengeContatos\obj\Debug\net8.0\TechChallengeContatos.genruntimeconfig.cache
 C:\Users\jeffe\source\repos\TechChallengeContatos\obj\Debug\net8.0\ref\TechChallengeContatos.dll
+C:\Users\jeffe\source\repos\TechChallengeContatos\obj\Debug\net8.0\TechChallengeContatos.sourcelink.json
+C:\Users\jeffe\source\repos\TechChallengeContatos\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\jeffe\source\repos\TechChallengeContatos\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\jeffe\source\repos\TechChallengeContatos\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\jeffe\source\repos\TechChallengeContatos\bin\Debug\net8.0\Newtonsoft.Json.dll

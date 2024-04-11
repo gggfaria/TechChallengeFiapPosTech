@@ -2,13 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using TechChallengeContatos.Entities;
 using TechChallengeContatos.Interfaces;
+using TechChallengeContatos.Models;
 using TechChallengeContatos.Repository;
 
 namespace TechChallengeContatos.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ContatoController : ControllerBase
+    public class ContatoController : MainController
     {
         private readonly IContatoRepository _contatoRepository;
 
@@ -52,32 +53,26 @@ namespace TechChallengeContatos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Contato contato)
+        public IActionResult Post(ContatoModel contato)
         {
-            var contatoCadastrado = _contatoRepository.CadastrarContato(contato);
+            if(!ModelState.IsValid) return CustomResponse(ModelState);
 
-            if (contatoCadastrado == null)
-            {
-                return BadRequest("Não foi possível cadastrar");
-            }
+            var contatoNovo = new Contato(contato.Nome, contato.DDD, contato.Telefone, contato.Email);
 
-            return Ok(contatoCadastrado);
+             _contatoRepository.CadastrarContato(contatoNovo);
+
+            return Ok();
         }
 
         [HttpPut]
-        public IActionResult Put(Contato contato, Guid Id)
+        public IActionResult Put(ContatoModel contato, Guid Id)
         {
-            try
-            {
-                var contatoAtualizado = _contatoRepository.AtualizarContato(contato, Id);
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            var contatoNovo = new Contato(contato.Nome, contato.DDD, contato.Telefone, contato.Email);
+            var contatoAtualizado = _contatoRepository.AtualizarContato(contatoNovo, Id);
 
                 return Ok(contatoAtualizado);
-            }
-            catch (Exception e)
-            {
-
-                return BadRequest($"Não foi possível atualizar => {e.Message}");
-            }
         }
 
         [HttpDelete("{id}")]
