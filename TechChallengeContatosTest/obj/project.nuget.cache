@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mLex0ZJysyL9fsi6dC/loVHi1/QZpqXbZseh9P0w5ihpUJi9fX2Hq8Be2YFUaB43yXoor8jdqi6S3zw5PwNoIw==",
+  "dgSpecHash": "friybjsW+VZiMNMmlg7N9Xd9R9Umd/Ia8qOW9f2UPRoqayhZTJHS0CmcManKbtr6YxBWTuioTQ2hkA5pTlP37g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj",
+  "projectFilePath": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jeffe\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\jeffe\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

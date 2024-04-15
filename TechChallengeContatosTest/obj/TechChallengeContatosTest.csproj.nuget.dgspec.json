@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj": {}
+    "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj": {
+    "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj",
+        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj",
         "projectName": "TechChallengeContatosTest",
-        "projectPath": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj",
+        "projectPath": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatosTest\\TechChallengeContatosTest.csproj",
         "packagesPath": "C:\\Users\\jeffe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatosTest\\obj\\",
+        "outputPath": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatosTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatos\\TechChallengeContatos.csproj": {
-                "projectPath": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatos\\TechChallengeContatos.csproj"
+              "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatos\\TechChallengeContatos.csproj": {
+                "projectPath": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatos\\TechChallengeContatos.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatos\\TechChallengeContatos.csproj": {
+    "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatos\\TechChallengeContatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatos\\TechChallengeContatos.csproj",
+        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatos\\TechChallengeContatos.csproj",
         "projectName": "TechChallengeContatos",
-        "projectPath": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatos\\TechChallengeContatos.csproj",
+        "projectPath": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatos\\TechChallengeContatos.csproj",
         "packagesPath": "C:\\Users\\jeffe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffe\\source\\repos\\TechChallengeContatos\\obj\\",
+        "outputPath": "C:\\Users\\jeffe\\source\\repos\\TechChallenge\\TechChallengeContatos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeffe\\AppData\\Roaming\\NuGet\\NuGet.Config",

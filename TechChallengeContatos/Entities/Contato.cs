@@ -4,19 +4,22 @@ namespace TechChallengeContatos.Entities
 {
     public class Contato
     {
+        public Guid Id { get; set; }
+
+        [Required(ErrorMessage = "O nome é obrigatório")]
         public string Nome { get; private set; }
 
+        [Required(ErrorMessage = "O DDD é obrigatório")]
         public string DDD { get; private set; }
 
+        [Required(ErrorMessage = "O Telefone é obrigatório")]
         public string Telefone { get; private set; }
 
+        [Required(ErrorMessage = "O E-mail é obrigatório")]
+        [EmailAddress(ErrorMessage = "E-mail em formato inválido.")]
         public string Email { get; private set; }
-        
-        public virtual Caderneta Caderneta { get;  set; }
 
-        
-        
-        private Contato(){}
+        private Contato() { }
         public Contato(string nome, string ddd, string telefone, string email)
         {
             Nome = nome;
@@ -25,14 +28,14 @@ namespace TechChallengeContatos.Entities
             Email = email;
         }
 
-        public void Atualizar(Contato contato)
+        public void AtualizarCampos(Contato contato)
         {
             Nome = contato.Nome;
             DDD = contato.DDD;
             Telefone = contato.Telefone;
             Email = contato.Email;
         }
-        
+
         public void SetNome(string nome)
         {
             this.Nome = nome;

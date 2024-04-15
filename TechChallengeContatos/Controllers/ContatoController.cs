@@ -11,17 +11,17 @@ namespace TechChallengeContatos.Controllers
     [ApiController]
     public class ContatoController : MainController
     {
-        private readonly IContatoRepository _contatoRepository;
+        private readonly IContatoService _contatoService;
 
-        public ContatoController(IContatoRepository contatoRepository)
+        public ContatoController(IContatoService contatoService)
         {
-            _contatoRepository = contatoRepository;
+            _contatoService = contatoService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_contatoRepository.ListarContato());
+            return Ok(_contatoService.ListarContato());
         }
 
         [HttpGet("{id:guid}")]
@@ -29,7 +29,7 @@ namespace TechChallengeContatos.Controllers
         {
             try
             {
-                var contato = _contatoRepository.ContatoPorId(id);
+                var contato = _contatoService.ContatoPorId(id);
                 return Ok(contato);
             }
             catch (Exception e)
@@ -43,7 +43,7 @@ namespace TechChallengeContatos.Controllers
         {
             try
             {
-                var contato = _contatoRepository.ContatoPorRegiao(ddd);
+                var contato = _contatoService.ContatoPorRegiao(ddd);
                 return Ok(contato);
             }
             catch (Exception e)
@@ -59,7 +59,7 @@ namespace TechChallengeContatos.Controllers
 
             var contatoNovo = new Contato(contato.Nome, contato.DDD, contato.Telefone, contato.Email);
 
-             _contatoRepository.CadastrarContato(contatoNovo);
+             _contatoService.CadastrarContato(contatoNovo);
 
             return Ok();
         }
@@ -70,7 +70,7 @@ namespace TechChallengeContatos.Controllers
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var contatoNovo = new Contato(contato.Nome, contato.DDD, contato.Telefone, contato.Email);
-            var contatoAtualizado = _contatoRepository.AtualizarContato(contatoNovo, Id);
+            var contatoAtualizado = _contatoService.AtualizarContato(contatoNovo, Id);
 
                 return Ok(contatoAtualizado);
         }
@@ -80,7 +80,7 @@ namespace TechChallengeContatos.Controllers
         {
             try
             {
-                _contatoRepository.DeletarContato(id);
+                _contatoService.DeletarContato(id);
 
                 return NoContent();
             }

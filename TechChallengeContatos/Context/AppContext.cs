@@ -10,5 +10,6 @@ namespace TechChallengeContatos.Context
         }
 
         public DbSet<Contato> Contatos{ get; set; }
+        public DbSet<Caderneta> Cadernetas{ get; set; }
     }
 }

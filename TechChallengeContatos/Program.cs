@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TechChallengeContatos.Context;
 using TechChallengeContatos.Interfaces;
 using TechChallengeContatos.Repository;
+using TechChallengeContatos.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoBanco")));
 builder.Services.AddScoped<IContatoRepository, ContatoRepository> ();
+builder.Services.AddTransient<IContatoService, ContatoService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

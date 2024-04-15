@@ -12,72 +12,37 @@ namespace TechChallengeContatos.Repository
             _context = context;
 
         }
-        public void CadastrarContato(Contato contato)
+        public void Cadastrar(Contato contato)
         {
             _context.Contatos.Add(contato);
             _context.SaveChanges();
         }
 
-        public List<Contato> ListarContato()
+        public List<Contato> Listar()
         {
             return _context.Contatos.ToList();
         }
 
-        public List<Contato> ContatoPorRegiao(string DDD)
+        public List<Contato> PorRegiao(string DDD)
         {
-            var contato = _context.Contatos.Where(x => x.DDD == DDD).ToList();
-
-            if (contato == null)
-            {
-                throw new Exception("Nenhum valor encontrado");
-            }
-
-            return contato;
+            return _context.Contatos.Where(x => x.DDD == DDD).ToList();
         }
 
-        public Contato AtualizarContato(Contato contato, Guid Id)
+        public void Atualizar(Contato contato)
         {
-            var contatoEncontrado = _context.Contatos.Find(Id);
-
-            if(contatoEncontrado == null)
-            {
-                throw new Exception("Nenhum valor encontrado");
-            }
-
-            contatoEncontrado.SetNome(contato.Nome);
-            contatoEncontrado.SetDDD(contato.DDD);
-            contatoEncontrado.SetTelefone(contato.Telefone);
-            contatoEncontrado.SetEmail(contato.Email);
-
-            _context.Contatos.Update(contatoEncontrado);
-            _context.SaveChanges();
-
-            return contato;
-        }
-
-        public void DeletarContato(Guid Id)
-        {
-            var contatoEncontrado = _context.Contatos.Find(Id);
-
-            if (contatoEncontrado == null)
-            {
-                throw new Exception("Nenhum valor encontrado");
-            }
-
-            _context.Contatos.Remove(contatoEncontrado);
+            _context.Contatos.Update(contato);
             _context.SaveChanges();
         }
 
-        public Contato ContatoPorId(Guid Id)
+        public void Deletar(Contato contato)
         {
-            var contatoEncontrado = _context.Contatos.Find(Id);
+            _context.Contatos.Remove(contato);
+            _context.SaveChanges();
+        }
 
-            if (contatoEncontrado == null)
-            {
-                throw new Exception("Nenhum valor encontrado");
-            }
-
-            return contatoEncontrado;
+        public Contato PorId(Guid Id)
+        {
+            return _context.Contatos.Find(Id);
         }
     }
 }
