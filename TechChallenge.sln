@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeContatos", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeContatosTest", "TechChallengeContatosTest\TechChallengeContatosTest.csproj", "{3C17E219-E94F-4CD4-958A-E18DA825DA1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeContatos.Domain", "TechChallengeContatos.Domain\TechChallengeContatos.Domain.csproj", "{B176529E-AB54-484A-9C13-F10245188DC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3C17E219-E94F-4CD4-958A-E18DA825DA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C17E219-E94F-4CD4-958A-E18DA825DA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C17E219-E94F-4CD4-958A-E18DA825DA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B176529E-AB54-484A-9C13-F10245188DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B176529E-AB54-484A-9C13-F10245188DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B176529E-AB54-484A-9C13-F10245188DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B176529E-AB54-484A-9C13-F10245188DC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
