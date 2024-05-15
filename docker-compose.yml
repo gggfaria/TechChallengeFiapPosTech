@@ -18,7 +18,7 @@
       context: .
       dockerfile: TechChallengeContatos.Web/Dockerfile
     ports:
-      - "80:80"
+      - "8080:8080"
     environment:
       ConnectionStrings__DefaultConnection: "Host=postgres;Database=postgres;Username=postgres;Password=test"
     depends_on:
@@ -29,3 +29,4 @@
 networks:
   techchallengecontatos-network:
     driver: bridge
+
