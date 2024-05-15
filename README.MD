@@ -42,3 +42,14 @@
 <p>
   Para que possamos avaliar, esperamos um vídeo demonstrando os passos utilizados para o desenvolvimento do projeto, a arquitetura escolhida, o banco de dados e principalmente o projeto funcionando com os requisitos básicos.
 </p>
+
+
+## Solução
+
+### Rodar 
+
+Para rodar o projeto basta utilizar o docker com o comando:
+
+```
+docker-compose up --build
+```
