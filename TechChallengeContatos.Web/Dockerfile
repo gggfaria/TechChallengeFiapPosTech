@@ -2,7 +2,7 @@
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
-EXPOSE 8081
+EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
@@ -10,6 +10,7 @@ WORKDIR /src
 COPY ["TechChallengeContatos.Web/TechChallengeContatos.Web.csproj", "TechChallengeContatos.Web/"]
 COPY ["TechChallengeContatos.Infra/TechChallengeContatos.Infra.csproj", "TechChallengeContatos.Infra/"]
 COPY ["TechChallengeContatos.Domain/TechChallengeContatos.Domain.csproj", "TechChallengeContatos.Domain/"]
+COPY ["TechChallengeContatos.Service/TechChallengeContatos.Service.csproj", "TechChallengeContatos.Service/"]
 RUN dotnet restore "TechChallengeContatos.Web/TechChallengeContatos.Web.csproj"
 COPY . .
 WORKDIR "/src/TechChallengeContatos.Web"
