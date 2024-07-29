@@ -1,4 +1,6 @@
-﻿services:
+﻿version: '3.4'
+
+services:
   postgres:
     container_name: 'postgres'
     image: postgres
@@ -11,12 +13,11 @@
     networks:
       - techchallengecontatos-network
     
-    
   techchallengecontatos.web:
     image: techchallengecontatos.web
     build:
       context: .
-      dockerfile: TechChallengeContatos.Web/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
@@ -26,7 +27,18 @@
     networks:
       - techchallengecontatos-network
 
+  techchallengecontatos.test:
+    image: techchallengecontatos.test
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    depends_on:
+      - postgres
+    networks:
+      - techchallengecontatos-network
+    volumes:
+      - ./test-results:/app/test-results # Montando o diretório de resultados dos testes no host
+
 networks:
   techchallengecontatos-network:
     driver: bridge
-

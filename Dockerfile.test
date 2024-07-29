@@ -1,18 +1,23 @@
-﻿# Stage 1: Build
+# Stage 1: Build the project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+
 COPY ["TechChallengeContatos.Web/TechChallengeContatos.Web.csproj", "TechChallengeContatos.Web/"]
 COPY ["TechChallengeContatos.Infra/TechChallengeContatos.Infra.csproj", "TechChallengeContatos.Infra/"]
 COPY ["TechChallengeContatos.Domain/TechChallengeContatos.Domain.csproj", "TechChallengeContatos.Domain/"]
 COPY ["TechChallengeContatos.Service/TechChallengeContatos.Service.csproj", "TechChallengeContatos.Service/"]
-RUN dotnet restore "TechChallengeContatos.Web/TechChallengeContatos.Web.csproj"
-COPY . .
-WORKDIR "/src/TechChallengeContatos.Web"
-RUN dotnet build "TechChallengeContatos.Web.csproj" -c Release -o /app/build
-RUN dotnet publish "TechChallengeContatos.Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
+COPY ["TechChallengeContatosTest/TechChallengeContatosTest.csproj", "TechChallengeContatosTest/"]
 
-# Stage 2: Run
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-WORKDIR /app
-COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "TechChallengeContatos.Web.dll"]
+RUN dotnet restore "TechChallengeContatos.Web/TechChallengeContatos.Web.csproj"
+
+COPY . .
+
+WORKDIR "/src/TechChallengeContatosTest"
+RUN dotnet build "TechChallengeContatosTest.csproj" -c Release -o /app/build
+
+# Stage 2: Run the tests
+FROM build AS testrunner
+WORKDIR /src/TechChallengeContatosTest
+
+COPY --from=build /app/build /app/build
+ENTRYPOINT ["dotnet", "test", "--logger:trx", "--results-directory", "/app/test-results"]

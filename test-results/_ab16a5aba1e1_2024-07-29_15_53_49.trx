@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="76f50f9e-5b16-4019-9217-cf938dfbc038" name="@ab16a5aba1e1 2024-07-29 15:53:49" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-07-29T15:53:49.3296456+00:00" queuing="2024-07-29T15:53:49.3296456+00:00" start="2024-07-29T15:53:48.8386984+00:00" finish="2024-07-29T15:53:49.3347426+00:00" />
+  <TestSettings name="default" id="1f657e50-e55a-42e9-bc2b-914bb6df9b1f">
+    <Deployment runDeploymentRoot="_ab16a5aba1e1_2024-07-29_15_53_49" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f011ef4d-2636-4993-8886-48b809f1a46a" testId="325ff1fc-2508-55d1-d09f-6eafa7e2e820" testName="O Id deve ser enviado" computerName="ab16a5aba1e1" duration="00:00:00.0002085" startTime="2024-07-29T15:53:49.2431438+00:00" endTime="2024-07-29T15:53:49.2431438+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f011ef4d-2636-4993-8886-48b809f1a46a" />
+    <UnitTestResult executionId="a276c4eb-aed1-4269-b844-4cbe0c7b73d4" testId="5b272f9b-86d3-fee8-2d0d-97360a759528" testName="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddValido_True(ddd: &quot;14&quot;)" computerName="ab16a5aba1e1" duration="00:00:00.0156778" startTime="2024-07-29T15:53:49.2192262+00:00" endTime="2024-07-29T15:53:49.2192431+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a276c4eb-aed1-4269-b844-4cbe0c7b73d4" />
+    <UnitTestResult executionId="e0d7202e-1484-4f17-9e18-b84182f37190" testId="0d43f7f9-78b8-c1ea-05ab-96e9342e0e06" testName="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddValido_True(ddd: &quot;12&quot;)" computerName="ab16a5aba1e1" duration="00:00:00.0004245" startTime="2024-07-29T15:53:49.2214070+00:00" endTime="2024-07-29T15:53:49.2214070+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0d7202e-1484-4f17-9e18-b84182f37190" />
+    <UnitTestResult executionId="883c7b36-dc5f-4af0-8cb0-fd2215f66957" testId="02eb1b03-6bfe-bdc5-9714-a210c48f7305" testName="TechChallengeContatosTest.Repository.ContatoServiceTests.Get_Validando_Objetos" computerName="ab16a5aba1e1" duration="00:00:00.0063999" startTime="2024-07-29T15:53:49.2498029+00:00" endTime="2024-07-29T15:53:49.2498030+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="883c7b36-dc5f-4af0-8cb0-fd2215f66957" />
+    <UnitTestResult executionId="f62f2241-4666-4dea-88fd-668ac7cab98c" testId="4bdae2ee-4254-52c4-a250-3ead47322936" testName="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddInvalido_False(ddd: &quot;10&quot;)" computerName="ab16a5aba1e1" duration="00:00:00.0002882" startTime="2024-07-29T15:53:49.2325476+00:00" endTime="2024-07-29T15:53:49.2325477+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f62f2241-4666-4dea-88fd-668ac7cab98c" />
+    <UnitTestResult executionId="af3e6265-e7b8-4bb8-9c21-4ca8b92564bd" testId="516314cc-31cb-ff65-594c-e69e686dede2" testName="O Id deve ser informado" computerName="ab16a5aba1e1" duration="00:00:00.0078470" startTime="2024-07-29T15:53:49.2428816+00:00" endTime="2024-07-29T15:53:49.2428816+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="af3e6265-e7b8-4bb8-9c21-4ca8b92564bd" />
+    <UnitTestResult executionId="ac7183ba-cc07-4f70-9604-3d754cb26341" testId="95ba2f7d-1e05-ce34-e567-8c68328f6abe" testName="O DDD deve ser enviado" computerName="ab16a5aba1e1" duration="00:00:00.0353470" startTime="2024-07-29T15:53:49.2349274+00:00" endTime="2024-07-29T15:53:49.2349275+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac7183ba-cc07-4f70-9604-3d754cb26341" />
+    <UnitTestResult executionId="e28980b2-1fea-4e26-a023-534512333600" testId="2865c940-7bb4-c998-9a47-c396a7f3be2c" testName="O Id deve ser enviado" computerName="ab16a5aba1e1" duration="00:00:00.0001455" startTime="2024-07-29T15:53:49.2433180+00:00" endTime="2024-07-29T15:53:49.2433180+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e28980b2-1fea-4e26-a023-534512333600" />
+    <UnitTestResult executionId="2696c4e3-a538-4294-9201-6fcaf56bc623" testId="70bd1340-b493-d026-1f82-2b79ff11cffc" testName="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddInvalido_False(ddd: &quot;1000&quot;)" computerName="ab16a5aba1e1" duration="00:00:00.0129226" startTime="2024-07-29T15:53:49.2322172+00:00" endTime="2024-07-29T15:53:49.2322173+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2696c4e3-a538-4294-9201-6fcaf56bc623" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="O Id deve ser informado" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="516314cc-31cb-ff65-594c-e69e686dede2">
+      <Execution id="af3e6265-e7b8-4bb8-9c21-4ca8b92564bd" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Repository.ContatoServiceTests" name="Put_o_Id_deve_estar_preenchido" />
+    </UnitTest>
+    <UnitTest name="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddInvalido_False(ddd: &quot;1000&quot;)" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="70bd1340-b493-d026-1f82-2b79ff11cffc">
+      <Execution id="2696c4e3-a538-4294-9201-6fcaf56bc623" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Domain.ContatoTest" name="EhValido_DddInvalido_False" />
+    </UnitTest>
+    <UnitTest name="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddInvalido_False(ddd: &quot;10&quot;)" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="4bdae2ee-4254-52c4-a250-3ead47322936">
+      <Execution id="f62f2241-4666-4dea-88fd-668ac7cab98c" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Domain.ContatoTest" name="EhValido_DddInvalido_False" />
+    </UnitTest>
+    <UnitTest name="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddValido_True(ddd: &quot;14&quot;)" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="5b272f9b-86d3-fee8-2d0d-97360a759528">
+      <Execution id="a276c4eb-aed1-4269-b844-4cbe0c7b73d4" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Domain.ContatoTest" name="EhValido_DddValido_True" />
+    </UnitTest>
+    <UnitTest name="O Id deve ser enviado" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="325ff1fc-2508-55d1-d09f-6eafa7e2e820">
+      <Execution id="f011ef4d-2636-4993-8886-48b809f1a46a" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Repository.ContatoServiceTests" name="ContatoPor_O_Id_deve_ser_enviado" />
+    </UnitTest>
+    <UnitTest name="O DDD deve ser enviado" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="95ba2f7d-1e05-ce34-e567-8c68328f6abe">
+      <Execution id="ac7183ba-cc07-4f70-9604-3d754cb26341" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Repository.ContatoServiceTests" name="PorRegiao_O_DDD_deve_ser_enviado" />
+    </UnitTest>
+    <UnitTest name="TechChallengeContatosTest.Domain.ContatoTest.EhValido_DddValido_True(ddd: &quot;12&quot;)" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="0d43f7f9-78b8-c1ea-05ab-96e9342e0e06">
+      <Execution id="e0d7202e-1484-4f17-9e18-b84182f37190" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Domain.ContatoTest" name="EhValido_DddValido_True" />
+    </UnitTest>
+    <UnitTest name="TechChallengeContatosTest.Repository.ContatoServiceTests.Get_Validando_Objetos" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="02eb1b03-6bfe-bdc5-9714-a210c48f7305">
+      <Execution id="883c7b36-dc5f-4af0-8cb0-fd2215f66957" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Repository.ContatoServiceTests" name="Get_Validando_Objetos" />
+    </UnitTest>
+    <UnitTest name="O Id deve ser enviado" storage="/src/techchallengecontatostest/bin/debug/net8.0/techchallengecontatostest.dll" id="2865c940-7bb4-c998-9a47-c396a7f3be2c">
+      <Execution id="e28980b2-1fea-4e26-a023-534512333600" />
+      <TestMethod codeBase="/src/TechChallengeContatosTest/bin/Debug/net8.0/TechChallengeContatosTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="TechChallengeContatosTest.Repository.ContatoServiceTests" name="Delete_O_Id_deve_ser_enviado" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="325ff1fc-2508-55d1-d09f-6eafa7e2e820" executionId="f011ef4d-2636-4993-8886-48b809f1a46a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b272f9b-86d3-fee8-2d0d-97360a759528" executionId="a276c4eb-aed1-4269-b844-4cbe0c7b73d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0d43f7f9-78b8-c1ea-05ab-96e9342e0e06" executionId="e0d7202e-1484-4f17-9e18-b84182f37190" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02eb1b03-6bfe-bdc5-9714-a210c48f7305" executionId="883c7b36-dc5f-4af0-8cb0-fd2215f66957" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4bdae2ee-4254-52c4-a250-3ead47322936" executionId="f62f2241-4666-4dea-88fd-668ac7cab98c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="516314cc-31cb-ff65-594c-e69e686dede2" executionId="af3e6265-e7b8-4bb8-9c21-4ca8b92564bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="95ba2f7d-1e05-ce34-e567-8c68328f6abe" executionId="ac7183ba-cc07-4f70-9604-3d754cb26341" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2865c940-7bb4-c998-9a47-c396a7f3be2c" executionId="e28980b2-1fea-4e26-a023-534512333600" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70bd1340-b493-d026-1f82-2b79ff11cffc" executionId="2696c4e3-a538-4294-9201-6fcaf56bc623" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.7)
+[xUnit.net 00:00:00.04]   Discovering: TechChallengeContatosTest
+[xUnit.net 00:00:00.07]   Discovered:  TechChallengeContatosTest
+[xUnit.net 00:00:00.07]   Starting:    TechChallengeContatosTest
+[xUnit.net 00:00:00.16]   Finished:    TechChallengeContatosTest
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

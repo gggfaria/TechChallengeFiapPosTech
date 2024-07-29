@@ -7,95 +7,103 @@ using TechChallengeContatos.Service.DTOs;
 using TechChallengeContatos.Service.Interfaces;
 using TechChallengeContatos.Service.Reponses;
 
-namespace TechChallengeContatos.Service.Services;
-
-public class ContatoService : IContatoService
+namespace TechChallengeContatos.Service.Services
 {
-    private readonly IContatoRepository _contatoRepository;
-    private readonly IMapper _mapper;
-
-    public ContatoService(IContatoRepository contatoRepository, IMapper mapper)
+    public class ContatoService : IContatoService
     {
-        _contatoRepository = contatoRepository;
-        _mapper = mapper;
-    }
+        private readonly IContatoRepository _contatoRepository;
+        private readonly IMapper _mapper;
 
-    public ResultService AtualizarContato(AtualizaContatoDto dto, Guid id)
-    {
-        var contato = _contatoRepository.SelecionaPorId(id);
+        public ContatoService(IContatoRepository contatoRepository, IMapper mapper)
+        {
+            _contatoRepository = contatoRepository;
+            _mapper = mapper;
+        }
 
-        if (contato is null)
-            return ResultServiceFactory.NotFound("Não encontrado");
-        
-        contato.Atualizar(dto.Nome, dto.Telefone, dto.Ddd, dto.Email);
-        if (!contato.EhValido())
-            return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
+        public ResultService AtualizarContato(AtualizaContatoDto dto, Guid id)
+        {
+            var contato = _contatoRepository.SelecionaPorId(id);
 
-        var result = _contatoRepository.Atualizar(contato);
+            if (contato is null)
+                return ResultServiceFactory.NotFound("Contato não encontrado");
+            
+            contato.Atualizar(dto.Nome, dto.Telefone, dto.Ddd, dto.Email);
+            if (!contato.EhValido())
+                return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
 
-        if (!result)
-            return ResultServiceFactory.InternalServerError("Falha ao atualizar");
+            var result = _contatoRepository.Atualizar(contato);
 
-        return ResultServiceFactory.NoContent("Atualizado com sucesso");
-    }
+            if (!result)
+                return ResultServiceFactory.InternalServerError("Falha ao atualizar");
 
-    public ResultService CadastrarContato(CadastroContatoDto dto)
-    {
-        var contato = _mapper.Map<Contato>(dto);
-        if (!contato.EhValido())
-            return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
+            return ResultServiceFactory.NoContent("Atualizado com sucesso");
+        }
 
-        var result = _contatoRepository.Cadastrar(contato);
+        public ResultService CadastrarContato(CadastroContatoDto dto)
+        {
+            var contato = _mapper.Map<Contato>(dto);
+            if (!contato.EhValido())
+                return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
 
-        if (!result)
-            return ResultServiceFactory.InternalServerError("Falha ao cadastrar");
+            var result = _contatoRepository.Cadastrar(contato);
 
-        var returnDto = _mapper.Map<ViewContatoDto>(contato);
+            if (!result)
+                return ResultServiceFactory.InternalServerError("Falha ao cadastrar");
 
-        return ResultServiceFactory<ViewContatoDto>.Ok(returnDto, "Cadastrado com sucesso");
-    }
+            var returnDto = _mapper.Map<ViewContatoDto>(contato);
 
-    public ResultService ContatoPorId(Guid id)
-    {
-        var contato = _contatoRepository.SelecionaPorId(id);
+            return ResultServiceFactory<ViewContatoDto>.Ok(returnDto, "Cadastrado com sucesso");
+        }
 
-        if (contato is null)
-            return ResultServiceFactory.NotFound("Contato não encontrado");
+        public ResultService ContatoPorId(Guid id)
+        {
+            var contato = _contatoRepository.SelecionaPorId(id);
 
+            if (contato is null)
+                return ResultServiceFactory.NotFound("Contato não encontrado");
 
-        return ResultServiceFactory<ViewContatoDto>.Ok(_mapper.Map<ViewContatoDto>(contato));
-    }
+            return ResultServiceFactory<ViewContatoDto>.Ok(_mapper.Map<ViewContatoDto>(contato));
+        }
 
-    public ResultService ContatoPorRegiao(string ddd)
-    {
-        var contatos = _contatoRepository.SelecionaPorRegiao(ddd);
+        public ResultService ContatoPorRegiao(string ddd)
+        {
+            if (string.IsNullOrEmpty(ddd))
+                return ResultServiceFactory.BadRequest("O DDD deve ser enviado");
 
-        if (contatos?.Count() < 1)
-            return ResultServiceFactory.NoContent();
+            var contatos = _contatoRepository.SelecionaPorRegiao(ddd);
 
+            if (contatos?.Count() < 1)
+                return ResultServiceFactory.NoContent();
 
-        return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));
-    }
+            return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));
+        }
 
-    public ResultService DeletarContato(Guid id)
-    {
-        var contato = _contatoRepository.SelecionaPorId(id);
-        var result = _contatoRepository.Deletar(contato);
+        public ResultService DeletarContato(Guid id)
+        {
+            if (id == Guid.Empty)
+                return ResultServiceFactory.BadRequest("O Id deve ser enviado");
 
-        if (!result)
-            return ResultServiceFactory.InternalServerError("Falha ao deletar");
+            var contato = _contatoRepository.SelecionaPorId(id);
 
-        return ResultServiceFactory.NoContent("Deletado com sucesso");
-    }
+            if (contato is null)
+                return ResultServiceFactory.NotFound("Contato não encontrado");
 
-    public ResultService ListarContato()
-    {
-        var contatos = _contatoRepository.ListarTodos();
+            var result = _contatoRepository.Deletar(contato);
 
-        if (contatos?.Count() < 1)
-            return ResultServiceFactory.NoContent();
+            if (!result)
+                return ResultServiceFactory.InternalServerError("Falha ao deletar");
 
+            return ResultServiceFactory.NoContent("Deletado com sucesso");
+        }
 
-        return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));
+        public ResultService ListarContato()
+        {
+            var contatos = _contatoRepository.ListarTodos();
+
+            if (contatos?.Count() < 1)
+                return ResultServiceFactory.NoContent();
+
+            return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));
+        }
     }
 }
