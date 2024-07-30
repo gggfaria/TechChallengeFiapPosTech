@@ -19,8 +19,8 @@ jobs:
     - name: Set up .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0.x'  # Define a versão do .NET SDK que você deseja usar
-
+        dotnet-version: '8.0.x'  
+        
     - name: Restore dependencies
       run: dotnet restore
 
