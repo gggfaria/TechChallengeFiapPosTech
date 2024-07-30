@@ -11,7 +11,6 @@
     networks:
       - techchallengecontatos-network
     
-    
   techchallengecontatos.web:
     image: techchallengecontatos.web
     build:
@@ -29,4 +28,3 @@
 networks:
   techchallengecontatos-network:
     driver: bridge
-
