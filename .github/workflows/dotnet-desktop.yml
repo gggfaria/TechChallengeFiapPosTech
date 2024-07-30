@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: .NET Tests
+=======
+name: .NET FIAP MODULO 2 RODAR TESTES WORKFLOW
+>>>>>>> b91bf1b (alterando workflow)
 
 on:
   push:
