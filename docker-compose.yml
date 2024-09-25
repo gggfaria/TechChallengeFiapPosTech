@@ -25,7 +25,20 @@
       - postgres
     networks:
       - techchallengecontatos-network
-
+        
+  rabbitmq:
+     image: rabbitmq:3-management
+     container_name: rabbitmq_management
+     ports:
+       - 25672:25672 
+       - 15672:15672 
+     environment:
+       - RABBITMQ_DEFAULT_USER = admin
+       - RABBITMQ_DEFAULT_PASS = tech123
+     networks:
+       - techchallengecontatos-network
+     restart: always
+            
 networks:
   techchallengecontatos-network:
     driver: bridge
