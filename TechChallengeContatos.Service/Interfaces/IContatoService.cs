@@ -5,10 +5,10 @@ namespace TechChallengeContatos.Service.Interfaces;
 
 public interface IContatoService
 {
-    ResultService ListarContato();
-    ResultService CadastrarContato(CadastroContatoDto contato);
-    ResultService AtualizarContato(AtualizaContatoDto dto, Guid id);
-    ResultService ContatoPorRegiao(string ddd);
-    ResultService DeletarContato(Guid id);
-    ResultService ContatoPorId(Guid id);
+    Task<ResultService> ListarContato();
+    Task<ResultService> CadastrarContato(CadastroContatoDto contato);
+    Task<ResultService> AtualizarContato(AtualizaContatoDto dto, Guid id);
+    Task<ResultService> ContatoPorRegiao(string ddd);
+    Task<ResultService> DeletarContato(Guid id);
+    Task<ResultService> ContatoPorId(Guid id);
 }

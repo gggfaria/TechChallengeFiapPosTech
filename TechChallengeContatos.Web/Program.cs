@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using TechChallengeContatos.Domain.Repositories;
+using TechChallengeContatos.Domain.Settings;
 using TechChallengeContatos.Infra.Context;
 using TechChallengeContatos.Infra.Repositories;
 using TechChallengeContatos.Service.Interfaces;
@@ -19,6 +20,9 @@ builder.Services.AddScoped<IContatoService, ContatoService>();
 
 //mapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.Configure<RabbitMQSettings>(
+    builder.Configuration.GetSection(nameof(RabbitMQSettings)));
 
 builder.Services.AddControllers(
     options =>
