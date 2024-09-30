@@ -15,7 +15,7 @@ public abstract class ServicePublisherBase
         _rabbitMqSetting = rabbitMqSetting.Value;
     }
 
-    public async Task PublishMessageAsync<TEntity>(TEntity message)
+    public async Task PublishMessageAsync<TEntity>(TEntity message, string queue)
     {
         var factory = new ConnectionFactory
         {
@@ -26,13 +26,13 @@ public abstract class ServicePublisherBase
 
         using var connection = factory.CreateConnection();
         using var channel = connection.CreateModel();
-        channel.QueueDeclare(queue: _rabbitMqSetting.Queue, durable: false, exclusive: false, autoDelete: false,
+        channel.QueueDeclare(queue: queue, durable: false, exclusive: false, autoDelete: false,
             arguments: null);
 
         var messageJson = JsonConvert.SerializeObject(message);
         var body = Encoding.UTF8.GetBytes(messageJson);
 
         await Task.Run(() =>
-            channel.BasicPublish(exchange: "", routingKey: _rabbitMqSetting.Queue, basicProperties: null, body: body));
+            channel.BasicPublish(exchange: "", routingKey: queue, basicProperties: null, body: body));
     }
 }

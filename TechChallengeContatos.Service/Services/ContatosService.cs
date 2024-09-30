@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.Extensions.Options;
+using TechChallengeContatos.Domain.Commands;
 using TechChallengeContatos.Domain.Contatos;
 using TechChallengeContatos.Domain.Extensions;
 using TechChallengeContatos.Domain.Repositories;
@@ -24,8 +25,6 @@ public class ContatoService : ServicePublisherBase, IContatoService
 
     public async Task<ResultService> AtualizarContato(AtualizaContatoDto dto, Guid id)
     {
-        await PublishMessageAsync(dto);
-
         var contato = _contatoRepository.SelecionaPorId(id);
 
         if (contato is null)
@@ -35,12 +34,9 @@ public class ContatoService : ServicePublisherBase, IContatoService
         if (!contato.EhValido())
             return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
 
-        var result = _contatoRepository.Atualizar(contato);
+        await PublishMessageAsync(new AtualizarContatoCommand(contato), nameof(AtualizarContatoCommand));
 
-        if (!result)
-            return ResultServiceFactory.InternalServerError("Falha ao atualizar");
-
-        return ResultServiceFactory.NoContent("Atualizado com sucesso");
+        return ResultServiceFactory.NoContent("Contato será atualizado");
     }
 
     public async Task<ResultService> CadastrarContato(CadastroContatoDto dto)
@@ -48,16 +44,9 @@ public class ContatoService : ServicePublisherBase, IContatoService
         var contato = _mapper.Map<Contato>(dto);
         if (!contato.EhValido())
             return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
-
-        var result = _contatoRepository.Cadastrar(contato);
-
-        if (!result)
-            return ResultServiceFactory.InternalServerError("" +
-                                                            "Falha ao cadastrar");
-
-        var returnDto = _mapper.Map<ViewContatoDto>(contato);
-
-        return ResultServiceFactory<ViewContatoDto>.Ok(returnDto, "Cadastrado com sucesso");
+        
+        await PublishMessageAsync(new CadastrarContatoCommand(contato), nameof(CadastrarContatoCommand));
+        return ResultServiceFactory.NoContent("Contato será cadastrado em breve.");
     }
 
     public async Task<ResultService> ContatoPorId(Guid id)
@@ -66,8 +55,7 @@ public class ContatoService : ServicePublisherBase, IContatoService
 
         if (contato is null)
             return ResultServiceFactory.NotFound("Contato não encontrado");
-
-
+        
         return ResultServiceFactory<ViewContatoDto>.Ok(_mapper.Map<ViewContatoDto>(contato));
     }
 
@@ -77,8 +65,7 @@ public class ContatoService : ServicePublisherBase, IContatoService
 
         if (contatos?.Count() < 1)
             return ResultServiceFactory.NoContent();
-
-
+        
         return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));
     }
 
@@ -99,7 +86,6 @@ public class ContatoService : ServicePublisherBase, IContatoService
 
         if (contatos?.Count() < 1)
             return ResultServiceFactory.NoContent();
-
 
         return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));
     }
