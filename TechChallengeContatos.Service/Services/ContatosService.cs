@@ -34,7 +34,7 @@ public class ContatoService : ServicePublisherBase, IContatoService
         if (!contato.EhValido())
             return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
 
-        await PublishMessageAsync(new AtualizarContatoCommand(contato), nameof(AtualizarContatoCommand));
+        await PublishMessageAsync(new AtualizarContatoCommand(contato));
 
         return ResultServiceFactory.NoContent("Contato será atualizado");
     }
@@ -45,7 +45,7 @@ public class ContatoService : ServicePublisherBase, IContatoService
         if (!contato.EhValido())
             return ResultServiceFactory.BadRequest(contato.ResultadoValidacao.GetErrorsResult(), "Dados inválidos");
         
-        await PublishMessageAsync(new CadastrarContatoCommand(contato), nameof(CadastrarContatoCommand));
+        await PublishMessageAsync(new CadastrarContatoCommand(contato));
         return ResultServiceFactory.NoContent("Contato será cadastrado em breve.");
     }
 
@@ -63,7 +63,7 @@ public class ContatoService : ServicePublisherBase, IContatoService
     {
         var contatos = _contatoRepository.SelecionaPorRegiao(ddd);
 
-        if (contatos?.Count() < 1)
+        if (contatos?.Count < 1)
             return ResultServiceFactory.NoContent();
         
         return ResultServiceFactory<IEnumerable<ViewContatoDto>>.Ok(_mapper.Map<IEnumerable<ViewContatoDto>>(contatos));

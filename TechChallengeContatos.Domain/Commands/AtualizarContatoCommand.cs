@@ -1,8 +1,9 @@
+using MediatR;
 using TechChallengeContatos.Domain.Contatos;
 
 namespace TechChallengeContatos.Domain.Commands;
 
-public class AtualizarContatoCommand
+public class AtualizarContatoCommand : IRequest
 {
     public Contato Contato { get; set; }
 
