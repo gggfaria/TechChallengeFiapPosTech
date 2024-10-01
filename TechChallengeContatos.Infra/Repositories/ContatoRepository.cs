@@ -30,10 +30,13 @@ public class ContatoRepository : IContatoRepository
 
     public bool Atualizar(Contato contato)
     {
-        if (_context.Entry(contato).State == EntityState.Detached)
+        var entry = _context.Entry(contato);
+        if (entry.State == EntityState.Detached)
+        {
             _context.Set<Contato>().Attach(contato);
-        
-        _context.Set<Contato>().Update(contato);
+        }
+
+        entry.State = EntityState.Modified;
         return Commit();
     }
 
@@ -61,9 +64,8 @@ public class ContatoRepository : IContatoRepository
 
         return query.SingleOrDefault(e => e.Id.Equals(id));
     }
-    
-    
-    
+
+
     private bool Commit()
     {
         var numberEntriesSaved = _context.SaveChanges();

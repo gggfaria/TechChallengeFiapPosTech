@@ -30,8 +30,6 @@ public class QueueConsumerService : BackgroundService
 
         using var connection = factory.CreateConnection();
         using var channel = connection.CreateModel();
-        
-
 
         while (!stoppingToken.IsCancellationRequested)
         {

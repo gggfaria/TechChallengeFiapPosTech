@@ -16,19 +16,19 @@ public class Contato
         Id = Guid.NewGuid();
     }
 
-    protected Contato()
+    public Contato()
     {
     }
 
     public ValidationResult ResultadoValidacao { get; private set; }
 
-    public Guid Id { get; private set; }
-    public Ddd Ddd { get; private set; }
-    public string Telefone { get; private set; }
-    
-    public string Nome { get; private set; }
+    public Guid Id { get; set; }
+    public Ddd Ddd { get; set; }
+    public string Telefone { get; set; }
 
-    public string Email { get; private set; }
+    public string Nome { get; set; }
+
+    public string Email { get; set; }
 
 
     public void Atualizar(string nome, string telefone, string ddd, string email)
@@ -38,7 +38,7 @@ public class Contato
         Email = email;
         Telefone = telefone;
     }
-    
+
     public bool EhValido()
     {
         var validador = new ContatoValidator();
@@ -50,10 +50,9 @@ public class Contato
 
     private void ValidarDdd()
     {
-        if (Ddd.EhValido()) 
+        if (Ddd.EhValido())
             return;
-        
+
         ResultadoValidacao.AddErrors(Ddd.ResultadoValidacao);
     }
-    
 }

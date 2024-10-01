@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ContatosDbContext>(
     opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("SqlConnection"))
 );
  
-//mediats
+//mediatr
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 //Repo
