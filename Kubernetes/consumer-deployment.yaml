@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techchallengecontatos-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: techchallengecontatos-consumer
+  template:
+    metadata:
+      labels:
+        app: techchallengecontatos-consumer
+    spec:
+      containers:
+      - name: techchallengecontatos-consumer
+        image: davson1/techchallengecontatos.consumerservice:latest
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          value: "Host=postgres;Database=postgres;Username=postgres;Password=test"

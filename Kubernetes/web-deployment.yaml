@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techchallengecontatos-web
+  labels:
+    app: techchallengecontatos-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: techchallengecontatos-web
+  template:
+    metadata:
+      labels:
+        app: techchallengecontatos-web
+    spec:
+      containers:
+      - name: techchallengecontatos-web
+        image: davson1/techchallengecontatos.web:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          value: "Host=postgres;Database=postgres;Username=postgres;Password=test"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: techchallengecontatos-web
+spec:
+  selector:
+    app: techchallengecontatos-web
+  ports:
+    - protocol: TCP
+      port: 8080          
+      targetPort: 8080    
+  type: NodePort          
