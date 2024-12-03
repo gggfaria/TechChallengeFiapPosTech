@@ -17,4 +17,17 @@ spec:
         image: davson1/techchallengecontatos.consumerservice:latest
         env:
         - name: ConnectionStrings__DefaultConnection
-          value: "Host=postgres;Database=postgres;Username=postgres;Password=test"
+          valueFrom:
+            configMapKeyRef:
+              name: configconnectionstring
+              key: connectionstring
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configconnectionstring
+data:
+  connectionstring: "Host=postgres;Database=postgres;Username=postgres;Password=test"
+
+
+
